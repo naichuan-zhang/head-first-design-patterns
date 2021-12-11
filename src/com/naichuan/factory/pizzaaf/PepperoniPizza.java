@@ -1,0 +1,23 @@
+package com.naichuan.factory.pizzaaf;
+
+/**
+ * @author Naichuan Zhang
+ * @since 12/11/2021
+ */
+public class PepperoniPizza extends Pizza {
+    PizzaIngredientFactory ingredientFactory;
+
+    public PepperoniPizza(PizzaIngredientFactory ingredientFactory) {
+        this.ingredientFactory = ingredientFactory;
+    }
+
+    @Override
+    void prepare() {
+        System.out.println("Preparing " + name);
+        dough = ingredientFactory.createDough();
+        sauce = ingredientFactory.createSauce();
+        cheese = ingredientFactory.createCheese();
+        veggies = ingredientFactory.createVeggies();
+        pepperoni = ingredientFactory.createPepperoni();
+    }
+}
