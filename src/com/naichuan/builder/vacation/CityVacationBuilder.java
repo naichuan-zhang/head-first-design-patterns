@@ -1,23 +1,23 @@
-package com.naichuan.build.vacation;
+package com.naichuan.builder.vacation;
 
 /**
  * @author Naichuan Zhang
  * @since 12/12/2021
  */
-public class OutdoorVacationBuilder extends VacationBuilder {
-    public OutdoorVacationBuilder() {
-        this.name = "Outdoorsy Vacation Builder";
+public class CityVacationBuilder extends VacationBuilder {
+    public CityVacationBuilder() {
+        this.name = "City Vacation Builder";
     }
 
     @Override
     public VacationBuilder addAccommodation() {
-        this.accommodations.add(new Tent());
+        this.accommodations.add(new Hotel());
         return this;
     }
 
     @Override
     public VacationBuilder addAccommodation(String name) {
-        this.accommodations.add(new Tent(name));
+        this.accommodations.add(new Hotel(name));
         return this;
     }
 
@@ -26,16 +26,16 @@ public class OutdoorVacationBuilder extends VacationBuilder {
         Reservation reservation = new Reservation();
         reservation.setArrivalDate(year, month, day);
         reservation.setNights(nights);
-        Tent tent = new Tent(name);
-        tent.setReservation(reservation);
-        tent.setSiteNumber(location);
-        this.accommodations.add(tent);
+        Hotel hotel = new Hotel(name);
+        hotel.setReservation(reservation);
+        hotel.setRoomNumber(location);
+        this.accommodations.add(hotel);
         return this;
     }
 
     @Override
     public VacationBuilder addEvent(String event) {
-        this.events.add("Hike: " + event);
+        this.events.add("See the " + event + " show");
         return this;
     }
 }

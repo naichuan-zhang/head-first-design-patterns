@@ -1,4 +1,4 @@
-package com.naichuan.build.vacation;
+package com.naichuan.builder.vacation;
 
 import java.util.ArrayList;
 import java.util.List;

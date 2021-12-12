@@ -1,4 +1,4 @@
-package com.naichuan.build.vacation;
+package com.naichuan.builder.vacation;
 
 /**
  * @author Naichuan Zhang
